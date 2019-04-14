@@ -5,14 +5,23 @@ var Letter = require("./Letter.js");
 function Word () {
     this.letters = [],
     this.strWord = function () {
+        let myWord = "";
         for (var i = 0; i < this.letters.length; i++) {
-            let thisWord += this.letters[i].char;
+            myWord = myWord + " " + this.letters[i].returnLetter();
         }
-        return thisWord;
+        return myWord;
     }
-    this.guess = function (char) {
+    this.runGuess = function (guess) {
+        let correct = [];
         for (var i = 0; i < this.letters.length; i++) {
-            this.letters[i].checkLetter(char);
+            correct.push(this.letters[i].checkLetter(guess));
+        }
+        if (correct.includes(true)) {
+            return true;
+        } else {
+            return false;
         }
     }
 }
+
+module.exports = Word;

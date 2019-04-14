@@ -8,7 +8,7 @@ function Letter(char) {
        if (this.guessed === true) {
         return this.char;
        }  else {
-        return "____";
+        return "___";
        } 
     }
     //a function that takes a character and checks against this.char and 
@@ -16,16 +16,13 @@ function Letter(char) {
     this.checkLetter = function (guess) {
         if (guess === this.char) {
             this.guessed = true;
+            return true;
         }
     }
 
 }
 
 
-// =================  TESTING AREA ==================
-var newLetter = new Letter("a");
-console.log(newLetter.returnLetter());
-newLetter.checkLetter("a");
-console.log(newLetter.returnLetter());
+module.exports = Letter;
 
 
