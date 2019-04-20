@@ -3,7 +3,6 @@ var odyssey = require("./Odyssey.js");
 var Word = require("./Word.js");
 var Letter = require("./Letter.js");
 var inquirer = require("inquirer");
-const chalk = require('chalk')
 
 //Global variables
 var guesses = 10;
@@ -43,6 +42,7 @@ function newGame(bool) {
     //if true then get new word and setup board
     if (bool === true) {
         chosen = [];
+        guesses = 10;
         myWord = selectWord(odyssey);
         console.log("\n**********************************\n");
         console.log("*********WORD GUESS GAME*********");
@@ -126,7 +126,6 @@ function guessMe () {
                     //If the guess was correct
                     if (correct === true) {
                         console.log("Correct!");
-                        gameBoard(myWord);
                         gameOver();
                     } 
                     //If guess was wrong

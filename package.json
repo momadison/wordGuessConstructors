@@ -17,6 +17,11 @@
   },
   "homepage": "https://github.com/momadison/wordGuessConstructors#readme",
   "dependencies": {
-    "inquirer": "^6.2.2"
+    "ascii-art": "^1.5.1",
+    "canvas": "^2.4.1",
+    "inquirer": "^6.3.1",
+    "pkg-config": "^1.1.1",
+    "require-uncached": "^2.0.0",
+    "unirest": "^0.6.0"
   }
 }
